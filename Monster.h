@@ -1,8 +1,11 @@
 #pragma once
-class Monster
+
+#include "Actor.h"
+
+class AMonster : public AActor
 {
 public:
-	Monster();
-	virtual ~Monster();
+	AMonster();
+	virtual ~AMonster();
 };
 

@@ -1,8 +1,11 @@
 #pragma once
-class Floor
+
+#include "Actor.h"
+
+class AFloor : public AActor
 {
 public:
-	Floor();
-	virtual ~Floor();
+	AFloor();
+	virtual ~AFloor();
 };
 

@@ -13,6 +13,8 @@ public:
 	void Run();
 	void End();
 
+	const int GetKeyCode() { return KeyCode; }
+
 protected:
 	void Input();
 	void Tick();

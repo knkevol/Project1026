@@ -1,12 +1,12 @@
 #pragma once
 
-using namespace std;
+#include "Actor.h"
 
-class Player
+class APlayer : public AActor
 {
 public:
-	Player();
-	virtual ~Player();
+	APlayer();
+	virtual ~APlayer();
 
 protected:
 	

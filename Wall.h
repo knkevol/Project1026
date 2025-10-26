@@ -1,8 +1,18 @@
 #pragma once
-class Wall
+
+#include "Actor.h"
+
+class AWall : public AActor
 {
 public:
-	Wall();
-	virtual ~Wall();
+	AWall();
+	virtual ~AWall();
+
+
+
+protected:
+	
+
+	
 };
 

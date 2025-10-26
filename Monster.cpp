@@ -1,9 +1,9 @@
 #include "Monster.h"
 
-Monster::Monster()
+AMonster::AMonster()
 {
 }
 
-Monster::~Monster()
+AMonster::~AMonster()
 {
 }

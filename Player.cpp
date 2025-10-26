@@ -1,9 +1,9 @@
 #include "Player.h"
 
-Player::Player()
+APlayer::APlayer()
 {
 }
 
-Player::~Player()
+APlayer::~APlayer()
 {
 }

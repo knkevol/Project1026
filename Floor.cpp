@@ -1,9 +1,9 @@
 #include "Floor.h"
 
-Floor::Floor()
+AFloor::AFloor()
 {
 }
 
-Floor::~Floor()
+AFloor::~AFloor()
 {
 }

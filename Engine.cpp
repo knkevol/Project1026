@@ -27,6 +27,7 @@ void FEngine::Run()
 
 void FEngine::End()
 {
+	bIsRunning = false;
 
 }
 
