@@ -18,15 +18,15 @@ void APlayer::Tick()
 	{
 		Location.Y--;
 	}
-	if (KeyCode == 's')
+	else if (KeyCode == 's')
 	{
 		Location.Y++;
 	}
-	if (KeyCode == 'a')
+	else if (KeyCode == 'a')
 	{
 		Location.X--;
 	}
-	if (KeyCode == 'd')
+	else if (KeyCode == 'd')
 	{
 		Location.X++;
 	}

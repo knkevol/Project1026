@@ -24,7 +24,7 @@ FEngine::~FEngine()
 void FEngine::Init()
 {
 
-	srand((unsigned int)time(nullptr));
+	//srand((unsigned int)time(nullptr));
 
 	World = new UWorld;
 
@@ -66,12 +66,15 @@ void FEngine::Init()
 					NewActor->SetShape(Line[X]);
 					World->SpawnActor(NewActor);
 				}
-				//else if (Line[X] == ' ')
+				else if (Line[X] == ' ')
+				{
+					AActor* NewActor = new AFloor();
+					NewActor->SetActorLocation(FVector2D(X, Y));
+					NewActor->SetShape(Line[X]);
+					World->SpawnActor(NewActor);
+				}
 
-				AActor* NewActor = new AFloor();
-				NewActor->SetActorLocation(FVector2D(X, Y));
-				NewActor->SetShape(' ');
-				World->SpawnActor(NewActor);
+				
 
 			}
 			Y++;
