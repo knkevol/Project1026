@@ -1,6 +1,7 @@
 #pragma once
-
+#include <iostream>
 #include "Vector.h"
+
 
 using namespace std;
 
@@ -10,18 +11,21 @@ public:
 	AActor();
 	virtual ~AActor();
 
-	__forceinline FVector2D GetLocation() { return Location; }
+	virtual void Tick();
+	virtual void Render();
+
+	__forceinline FVector2D GetActorLocation() const { return Location; }
+	void SetActorLocation(FVector2D InVector)
+	{
+		Location.X = InVector.X;
+		Location.Y = InVector.Y;
+	}
 
 	__forceinline char GetShape() { return Shape; }
-	char SetShape(char InShape)
+	void SetShape(char InShape)
 	{
 		Shape = InShape;
 	}
-
-protected:
-	void Move();
-
-public:
 
 protected:
 	FVector2D Location;

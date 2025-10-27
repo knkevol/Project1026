@@ -1,11 +1,13 @@
 #pragma once
 
-#include "Actor.h"
+
 #include "Engine.h"
 
 #include <vector>
 
 using namespace std;
+
+class AActor;
 
 class UWorld
 {

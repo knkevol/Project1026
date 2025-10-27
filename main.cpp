@@ -1,18 +1,17 @@
 #include <iostream>
 #include "Engine.h"
+#include "Vector.h"
+
 
 using namespace std;
 
 int main()
 {
-	FEngine* MyEngine = new FEngine();
+	GEngine->Init();
+	GEngine->Run();
+	GEngine->End();
 
-	MyEngine->Init();
-	MyEngine->Run();
-	MyEngine->End();
-
-	delete MyEngine;
-
+	delete GEngine;
 
 	return 0;
 }
