@@ -31,3 +31,11 @@ void AActor::Render()
 	cout << Shape;
 
 }
+
+bool AActor::CheckCollision(AActor* Other)
+{
+	if (this->bIsCollision && this != Other && Other->bIsCollision)
+	{
+		return true;
+	}
+}

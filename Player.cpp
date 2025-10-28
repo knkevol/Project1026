@@ -4,6 +4,7 @@
 
 APlayer::APlayer()
 {
+	ZOrder = 3;
 }
 
 APlayer::~APlayer()

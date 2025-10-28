@@ -10,15 +10,18 @@
 #include <fstream>
 #include <string>
 #include <conio.h>
+#include <algorithm>
 
 FEngine* FEngine::Instance = nullptr;
 
 FEngine::FEngine()
 {
+	World = nullptr;
 }
 
 FEngine::~FEngine()
 {
+	delete World;
 }
 
 void FEngine::Init()
@@ -26,7 +29,7 @@ void FEngine::Init()
 
 	//srand((unsigned int)time(nullptr));
 
-	World = new UWorld;
+	World = new UWorld();
 
 	ifstream MapFile("Level101.map");
 	if (MapFile.is_open())
@@ -79,10 +82,12 @@ void FEngine::Init()
 			}
 			Y++;
 		}
+		vector<AActor*>& AllActors = World->GetAllActors();
+		sort(AllActors.begin(), AllActors.end(), 
+			[](AActor* A, AActor* B) {return A->GetZOder() < B->GetZOder(); });
+		MapFile.close();
+		//World->SortActor();
 	}
-	MapFile.close();
-
-
 }
 
 void FEngine::Run()

@@ -15,12 +15,14 @@ public:
 	UWorld();
 	virtual ~UWorld();
 
-	vector<AActor*> GetAllActors(vector<AActor*>& InActors) const;
+	vector<AActor*>& GetAllActors(/*vector<AActor*>& InActors*/);
 
 	AActor* SpawnActor(AActor* InSpawnActor);
 
 	virtual void Tick();
 	virtual void Render();
+
+	void SortActor();
 
 
 protected:

@@ -27,7 +27,16 @@ public:
 		Shape = InShape;
 	}
 
+	__forceinline char GetZOder() const { return ZOrder; }
+
+	bool CheckCollision(AActor* Other);
+
 protected:
 	FVector2D Location;
 	char Shape;
+	int ZOrder;
+
+public:
+	bool bIsCollision = false;
+	bool bIsOverlap = true;
 };

@@ -9,10 +9,9 @@ UWorld::~UWorld()
 {
 }
 
-vector<AActor*> UWorld::GetAllActors(vector<AActor*>& InActors) const
+vector<AActor*>& UWorld::GetAllActors()
 {
-    InActors = Actors;
-    return InActors;
+    return Actors;
 }
 
 AActor* UWorld::SpawnActor(AActor* InSpawnActor)
@@ -34,5 +33,22 @@ void UWorld::Render()
     for (auto Actor : Actors)
     {
         Actor->Render();
+    }
+}
+
+void UWorld::SortActor()
+{
+    for (int i = 0; i < Actors.size(); ++i)
+    {
+        for (int j = 0; j < Actors.size(); ++j)
+        {
+            if (Actors[i]->GetZOder() < Actors[j]->GetZOder())
+            {
+                AActor* Temp = Actors[i];
+                Actors[i] = Actors[j];
+                Actors[j] = Temp;
+            }
+        }
+
     }
 }
