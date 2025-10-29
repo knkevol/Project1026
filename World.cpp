@@ -9,10 +9,12 @@ UWorld::~UWorld()
 {
 }
 
-vector<AActor*>& UWorld::GetAllActors()
+vector<AActor*> UWorld::GetAllActors(vector<AActor*>& OutActors) const
 {
-    return Actors;
+    OutActors = Actors;
+    return OutActors;
 }
+
 
 AActor* UWorld::SpawnActor(AActor* InSpawnActor)
 {

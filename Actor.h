@@ -31,12 +31,17 @@ public:
 
 	bool CheckCollision(AActor* Other);
 
+	__forceinline bool GetCollision() const { return bIsCollision; }
+	__forceinline bool GetOverlap() const { return bIsOverlap; }
+
 protected:
 	FVector2D Location;
 	char Shape;
 	int ZOrder;
-
-public:
 	bool bIsCollision = false;
 	bool bIsOverlap = true;
+
+public:
+	
+	
 };

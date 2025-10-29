@@ -34,7 +34,8 @@ void AActor::Render()
 
 bool AActor::CheckCollision(AActor* Other)
 {
-	if (this->bIsCollision && this != Other && Other->bIsCollision)
+	if (bIsCollision && this->bIsCollision && Other->bIsCollision
+		&& (this != Other) && (this->Location == Other->Location))
 	{
 		return true;
 	}
