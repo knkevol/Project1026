@@ -15,7 +15,7 @@ public:
 	UWorld();
 	virtual ~UWorld();
 
-	vector<AActor*> GetAllActors(vector<AActor*>& OutActors) const;
+	vector<AActor*> GetAllActors(vector<AActor*>& OutActors);
 
 	AActor* SpawnActor(AActor* InSpawnActor);
 

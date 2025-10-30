@@ -9,7 +9,7 @@ UWorld::~UWorld()
 {
 }
 
-vector<AActor*> UWorld::GetAllActors(vector<AActor*>& OutActors) const
+vector<AActor*> UWorld::GetAllActors(vector<AActor*>& OutActors)
 {
     OutActors = Actors;
     return OutActors;

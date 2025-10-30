@@ -32,9 +32,15 @@ void AActor::Render()
 
 }
 
-bool AActor::CheckCollision(AActor* Other)
+bool AActor::CheckCollision(const AActor* Other)
 {
-	if (bIsCollision && this->bIsCollision && Other->bIsCollision
+
+	if(Other->bIsOverlap)
+	{
+		return false;
+	}
+
+	if (Other->bIsCollision && bIsCollision
 		&& (this != Other) && (this->Location == Other->Location))
 	{
 		return true;

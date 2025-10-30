@@ -6,6 +6,7 @@ AMonster::AMonster()
 {
 	ZOrder = 2;
 	bIsCollision = true;
+	bIsOverlap = true;
 }
 
 AMonster::~AMonster()
@@ -18,7 +19,7 @@ void AMonster::Tick()
 {
 	int KeyCode = rand() % 4;
 
-	FVector2D PreLocation = Location;
+	FVector2D PreLocation(Location);
 
 	switch (KeyCode)
 	{

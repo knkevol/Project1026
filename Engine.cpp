@@ -69,22 +69,15 @@ void FEngine::Init()
 					NewActor->SetShape(Line[X]);
 					World->SpawnActor(NewActor);
 				}
-				else if (Line[X] == ' ')
-				{
 					AActor* NewActor = new AFloor();
 					NewActor->SetActorLocation(FVector2D(X, Y));
-					NewActor->SetShape(Line[X]);
+					NewActor->SetShape(' ');
 					World->SpawnActor(NewActor);
-				}
-
 				
 
 			}
 			Y++;
 		}
-		//vector<AActor*>& AllActors = World->GetAllActors();
-		//sort(AllActors.begin(), AllActors.end(), 
-		//	[](AActor* A, AActor* B) {return A->GetZOder() < B->GetZOder(); });
 		MapFile.close();
 		World->SortActor();
 	}

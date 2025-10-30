@@ -29,7 +29,7 @@ public:
 
 	__forceinline char GetZOder() const { return ZOrder; }
 
-	bool CheckCollision(AActor* Other);
+	bool CheckCollision(const AActor* Other);
 
 	__forceinline bool GetCollision() const { return bIsCollision; }
 	__forceinline bool GetOverlap() const { return bIsOverlap; }
