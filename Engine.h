@@ -1,8 +1,9 @@
 #pragma once
+#include <SDL3/SDL.h>
+#pragma comment(lib, "SDL3")
 
-#include <conio.h>
+
 class UWorld;
-
 
 class FEngine
 {
@@ -11,6 +12,8 @@ protected:
 
 public:
 	virtual ~FEngine();
+
+	void OpenLevel();
 
 	virtual void Init();
 	virtual void Run();
@@ -40,6 +43,11 @@ protected:
 
 	bool bIsRunning = true;
 	int KeyCode = 0;
+
+	//SDL
+	SDL_Window* MyWindow;
+	SDL_Renderer* MyRenderer;
+	SDL_Event MyEvent;
 
 };
 
