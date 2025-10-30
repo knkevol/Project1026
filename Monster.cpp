@@ -2,11 +2,21 @@
 #include "Engine.h"
 #include "World.h"
 
+#include "CollisionComponent.h"
+#include "PaperFlipbookComponent.h"
+#include "Component.h"
+#include "Actor.h"
+
 AMonster::AMonster()
 {
-	ZOrder = 2;
-	bIsCollision = true;
-	bIsOverlap = true;
+	Collision = new UCollisionComponent();
+	Collision->SetCollision(true);
+	Collision->SetOverlap(true);
+	SetUpAttachment(Collision);
+
+	PaperFlipbook = new UPaperFlipbookComponent;
+	PaperFlipbook->SetZOrder(2);
+	SetUpAttachment(PaperFlipbook);
 }
 
 AMonster::~AMonster()
@@ -41,12 +51,17 @@ void AMonster::Tick()
 	bool bFlag = false;
 	for (auto Actor : AllActors)
 	{
-		if (CheckCollision(Actor) && this != Actor)
+		for (auto Comp : Actor->GetAllComponents())
 		{
-			bFlag = true;
+			UCollisionComponent* CollisionComp = dynamic_cast<UCollisionComponent*>(Comp); //컴포넌트 중에 컬리전컴포넌트만
+			if (Collision->CheckCollision(CollisionComp))
+			{
+				bFlag = true;
 
-			break; //*
+				break; //*
+			}
 		}
+		
 	}
 
 	if (bFlag)

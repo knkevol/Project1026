@@ -1,8 +1,13 @@
 #include "Goal.h"
 
+#include "PaperFlipbookComponent.h"
+#include "Actor.h"
+
 AGoal::AGoal()
 {
-	ZOrder = 1;
+	PaperFlipbook = new UPaperFlipbookComponent;
+	PaperFlipbook->SetZOrder(1);
+	SetUpAttachment(PaperFlipbook);
 }
 
 AGoal::~AGoal()

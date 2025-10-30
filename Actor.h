@@ -1,6 +1,10 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "Vector.h"
+
+class UComponent;
+class UPaperFlipbookComponent;
 
 
 using namespace std;
@@ -21,27 +25,17 @@ public:
 		Location.Y = InVector.Y;
 	}
 
-	__forceinline char GetShape() { return Shape; }
-	void SetShape(char InShape)
-	{
-		Shape = InShape;
-	}
-
-	__forceinline char GetZOder() const { return ZOrder; }
-
-	bool CheckCollision(const AActor* Other);
-
-	__forceinline bool GetCollision() const { return bIsCollision; }
-	__forceinline bool GetOverlap() const { return bIsOverlap; }
-
 protected:
 	FVector2D Location;
-	char Shape;
-	int ZOrder;
-	bool bIsCollision = false;
-	bool bIsOverlap = true;
-
-public:
 	
+
+//	Component
+public:
+	void SetUpAttachment(UComponent* InComp);
+	vector<UComponent*> GetAllComponents() const { return Components; }
+
+protected:
+	vector<UComponent*> Components;
+	UPaperFlipbookComponent* PaperFlipbook;
 	
 };

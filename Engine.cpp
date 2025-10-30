@@ -21,6 +21,8 @@ FEngine* FEngine::Instance = nullptr;
 FEngine::FEngine() : MyEvent(SDL_Event())
 {
 	World = nullptr;
+	MyRenderer = nullptr;
+	MyWindow = nullptr;
 }
 
 FEngine::~FEngine()
@@ -48,7 +50,7 @@ void FEngine::OpenLevel()
 				{
 					AActor* NewActor = new AWall();
 					NewActor->SetActorLocation(FVector2D(X, Y));
-					NewActor->SetShape(Line[X]);
+					NewActor->(Line[X]);
 					World->SpawnActor(NewActor);
 				}
 				else if (Line[X] == 'P')

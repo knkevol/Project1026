@@ -4,11 +4,20 @@
 #include "World.h"
 #include <vector>
 
+#include "CollisionComponent.h"
+#include "PaperFlipbookComponent.h"
+#include "Actor.h"
+
 APlayer::APlayer()
 {
-	ZOrder = 3;
-	bIsCollision = true;
-	bIsOverlap = true;
+	Collision = new UCollisionComponent;
+	Collision->SetCollision(true);
+	Collision->SetOverlap(true);
+	SetUpAttachment(Collision);
+
+	PaperFlipbook = new UPaperFlipbookComponent;
+	PaperFlipbook->SetZOrder(3);
+	SetUpAttachment(PaperFlipbook);
 
 }
 
@@ -46,12 +55,17 @@ void APlayer::Tick()
 	bool bFlag = false;
  	for (auto Actor : AllActors)
 	{
-		if (CheckCollision(Actor) && this != Actor)
+		for (auto Comp : Actor->GetAllComponents())
 		{
-			bFlag = true;
+			UCollisionComponent* CollisionComp = dynamic_cast<UCollisionComponent*>(Comp);
+			if (Collision->CheckCollision(CollisionComp))
+			{
+				bFlag = true;
 
-			break; //*
+				break; //*
+			}
 		}
+		
 	}
 
 	if (bFlag)

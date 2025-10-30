@@ -1,11 +1,10 @@
 #include "Actor.h"
-
-#include <conio.h>
-#include <Windows.h>
+#include "PaperFlipbookComponent.h"
 
 AActor::AActor()
 {
-	Shape = ' ';
+	PaperFlipbook = new UPaperFlipbookComponent;
+	PaperFlipbook->SetShape(' ');
 	Location = 0, 0;
 }
 
@@ -19,30 +18,8 @@ void AActor::Tick()
 	
 }
 
-void AActor::Render()
+void AActor::SetUpAttachment(UComponent* InComp)
 {
-	COORD Position;
+	Components.push_back(InComp);
 
-	Position.X = Location.X;
-	Position.Y = Location.Y;
-
-	SetConsoleCursorPosition((HANDLE)GetStdHandle(STD_OUTPUT_HANDLE), Position);
-
-	cout << Shape;
-
-}
-
-bool AActor::CheckCollision(const AActor* Other)
-{
-
-	if(Other->bIsOverlap)
-	{
-		return false;
-	}
-
-	if (Other->bIsCollision && bIsCollision
-		&& (this != Other) && (this->Location == Other->Location))
-	{
-		return true;
-	}
 }

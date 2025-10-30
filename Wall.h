@@ -2,6 +2,9 @@
 
 #include "Actor.h"
 
+class UCollisionComponent;
+class UPaperFlipbookComponent;
+
 class AWall : public AActor
 {
 public:
@@ -9,9 +12,10 @@ public:
 	virtual ~AWall();
 
 
-
+// Component
 protected:
-	
+	UCollisionComponent* Collision;
+	UPaperFlipbookComponent* PaperFlipbook;
 
 	
 };

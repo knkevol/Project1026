@@ -1,8 +1,11 @@
 #include "Floor.h"
+#include "PaperFlipbookComponent.h"
 
 AFloor::AFloor()
 {
-	ZOrder = 0;
+	PaperFlipbook = new UPaperFlipbookComponent;
+	PaperFlipbook->SetZOrder(0);
+	SetUpAttachment(PaperFlipbook);
 }
 
 AFloor::~AFloor()
