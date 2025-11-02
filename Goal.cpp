@@ -9,6 +9,7 @@ AGoal::AGoal()
 	PaperFlipbook->SetZOrder(1);
 	PaperFlipbook->SetShape('G');
 	PaperFlipbook->SetOwner(this);
+	PaperFlipbook->Color = SDL_Color{ 0, 255, 0, 0 };
 	SetUpAttachment(PaperFlipbook);
 }
 

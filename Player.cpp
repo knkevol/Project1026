@@ -19,6 +19,7 @@ APlayer::APlayer()
 	PaperFlipbook->SetZOrder(3);
 	PaperFlipbook->SetShape('P');
 	PaperFlipbook->SetOwner(this);
+	PaperFlipbook->Color = SDL_Color{ 0, 255, 255, 0 };
 	SetUpAttachment(PaperFlipbook);
 
 }

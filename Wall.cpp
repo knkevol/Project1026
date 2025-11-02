@@ -15,6 +15,7 @@ AWall::AWall()
 	PaperFlipbook->SetZOrder(1);
 	PaperFlipbook->SetShape('*');
 	PaperFlipbook->SetOwner(this);
+	PaperFlipbook->Color = SDL_Color{ 0, 0, 0, 0 };
 	SetUpAttachment(PaperFlipbook);
 
 }

@@ -32,6 +32,8 @@ public:
 		return Instance;
 	}
 
+	__forceinline SDL_Renderer* GetRenderer() const { return MyRenderer; }
+
 protected:
 	void Input();
 	void Tick();

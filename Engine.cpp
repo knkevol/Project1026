@@ -27,7 +27,11 @@ FEngine::FEngine() : MyEvent(SDL_Event())
 
 FEngine::~FEngine()
 {
-	delete World;
+	if (World)
+	{
+		delete World;
+
+	}
 }
 
 void FEngine::OpenLevel()

@@ -18,6 +18,7 @@ AMonster::AMonster()
 	PaperFlipbook->SetZOrder(2);
 	PaperFlipbook->SetShape('M');
 	PaperFlipbook->SetOwner(this);
+	PaperFlipbook->Color = SDL_Color{ 255, 0, 255, 0 };
 	SetUpAttachment(PaperFlipbook);
 }
 
