@@ -11,6 +11,7 @@ AMonster::AMonster()
 {
 	Collision = new UCollisionComponent();
 	Collision->SetCollision(true);
+	Collision->SetOwner(this);
 	Collision->SetOverlap(true);
 	SetUpAttachment(Collision);
 

@@ -7,6 +7,7 @@
 #include "Monster.h"
 #include "Goal.h"
 #include "World.h"
+#include "Input.h"
 
 #include <iostream>
 #include <fstream>
@@ -23,6 +24,7 @@ FEngine::FEngine() : MyEvent(SDL_Event())
 	World = nullptr;
 	MyRenderer = nullptr;
 	MyWindow = nullptr;
+	InputDevice = new UInput();
 }
 
 FEngine::~FEngine()
@@ -31,6 +33,10 @@ FEngine::~FEngine()
 	{
 		delete World;
 
+	}
+	if (InputDevice)
+	{
+		delete InputDevice;
 	}
 }
 
@@ -134,7 +140,8 @@ void FEngine::End()
 
 void FEngine::Input()
 {
-	KeyCode = _getch();
+	//KeyCode = _getch();
+	InputDevice->Tick();
 }
 
 void FEngine::Tick()

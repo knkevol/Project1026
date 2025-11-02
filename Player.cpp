@@ -13,6 +13,7 @@ APlayer::APlayer()
 	Collision = new UCollisionComponent;
 	Collision->SetCollision(true);
 	Collision->SetOverlap(true);
+	Collision->SetOwner(this);
 	SetUpAttachment(Collision);
 
 	PaperFlipbook = new UPaperFlipbookComponent;
