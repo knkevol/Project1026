@@ -17,6 +17,8 @@ APlayer::APlayer()
 
 	PaperFlipbook = new UPaperFlipbookComponent;
 	PaperFlipbook->SetZOrder(3);
+	PaperFlipbook->SetShape('P');
+	PaperFlipbook->SetOwner(this);
 	SetUpAttachment(PaperFlipbook);
 
 }
@@ -58,11 +60,14 @@ void APlayer::Tick()
 		for (auto Comp : Actor->GetAllComponents())
 		{
 			UCollisionComponent* CollisionComp = dynamic_cast<UCollisionComponent*>(Comp);
-			if (Collision->CheckCollision(CollisionComp))
+			if (CollisionComp)
 			{
-				bFlag = true;
+				if (Collision->CheckCollision(CollisionComp))
+				{
+					bFlag = true;
 
-				break; //*
+					break; //*
+				}
 			}
 		}
 		

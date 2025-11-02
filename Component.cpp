@@ -11,4 +11,5 @@ UComponent::~UComponent()
 
 void UComponent::SetOwner(AActor* InOwner)
 {
+	Owner = InOwner;
 }

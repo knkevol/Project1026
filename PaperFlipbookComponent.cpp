@@ -19,7 +19,7 @@ void UPaperFlipbookComponent::Tick()
 void UPaperFlipbookComponent::Render()
 {
     COORD Position;
-   
+
     Position.X = GetOwner()->GetActorLocation().X;
     Position.Y = GetOwner()->GetActorLocation().Y;
 

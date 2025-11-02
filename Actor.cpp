@@ -3,8 +3,8 @@
 
 AActor::AActor()
 {
-	PaperFlipbook = new UPaperFlipbookComponent;
-	PaperFlipbook->SetShape(' ');
+	//PaperFlipbook = new UPaperFlipbookComponent;
+	//PaperFlipbook->SetShape(' ');
 	Location = 0, 0;
 }
 

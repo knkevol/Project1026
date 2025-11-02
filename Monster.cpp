@@ -16,6 +16,8 @@ AMonster::AMonster()
 
 	PaperFlipbook = new UPaperFlipbookComponent;
 	PaperFlipbook->SetZOrder(2);
+	PaperFlipbook->SetShape('M');
+	PaperFlipbook->SetOwner(this);
 	SetUpAttachment(PaperFlipbook);
 }
 
@@ -54,12 +56,15 @@ void AMonster::Tick()
 		for (auto Comp : Actor->GetAllComponents())
 		{
 			UCollisionComponent* CollisionComp = dynamic_cast<UCollisionComponent*>(Comp); //컴포넌트 중에 컬리전컴포넌트만
-			if (Collision->CheckCollision(CollisionComp))
+			if (CollisionComp)
 			{
-				bFlag = true;
-
-				break; //*
+				if (Collision->CheckCollision(CollisionComp))
+				{
+					bFlag = true;
+					break; //*
+				}
 			}
+			
 		}
 		
 	}

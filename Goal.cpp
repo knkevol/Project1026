@@ -7,6 +7,8 @@ AGoal::AGoal()
 {
 	PaperFlipbook = new UPaperFlipbookComponent;
 	PaperFlipbook->SetZOrder(1);
+	PaperFlipbook->SetShape('G');
+	PaperFlipbook->SetOwner(this);
 	SetUpAttachment(PaperFlipbook);
 }
 

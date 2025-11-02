@@ -35,7 +35,15 @@ void UWorld::Render()
 {
     for (auto Actor : Actors)
     {
-        Actor->Render();
+        //Actor->Render();
+        for (auto Comp : Actor->GetAllComponents())
+        {
+            USceneComponent* Scene = dynamic_cast<USceneComponent*>(Comp);
+            if (Scene)
+            {
+                Scene->Render();
+            }
+        }
     }
 }
 

@@ -26,4 +26,6 @@ bool UCollisionComponent::CheckCollision(const UCollisionComponent* InComp)
 		
 		return true;
 	}
+
+	return false;
 }

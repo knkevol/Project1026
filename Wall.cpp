@@ -13,6 +13,8 @@ AWall::AWall()
 
 	PaperFlipbook = new UPaperFlipbookComponent;
 	PaperFlipbook->SetZOrder(1);
+	PaperFlipbook->SetShape('*');
+	PaperFlipbook->SetOwner(this);
 	SetUpAttachment(PaperFlipbook);
 
 }
