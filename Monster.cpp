@@ -9,10 +9,12 @@
 
 AMonster::AMonster()
 {
+	bool True = true;
+	bool False = false;
 	Collision = new UCollisionComponent();
-	Collision->SetCollision(true);
+	Collision->SetCollision(True);
 	Collision->SetOwner(this);
-	Collision->SetOverlap(true);
+	Collision->SetOverlap(True);
 	SetUpAttachment(Collision);
 
 	PaperFlipbook = new UPaperFlipbookComponent;
@@ -39,12 +41,16 @@ void AMonster::Tick()
 	{
 	case 0:
 		Location.Y++;
+		break;
 	case 1:
 		Location.X--;
+		break;
 	case 2:
 		Location.Y--;
+		break;
 	case 3:
 		Location.X++;
+		break;
 	}
 
 

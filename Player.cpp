@@ -10,9 +10,11 @@
 
 APlayer::APlayer()
 {
+	bool True = true;
+	bool False = false;
 	Collision = new UCollisionComponent;
-	Collision->SetCollision(true);
-	Collision->SetOverlap(true);
+	Collision->SetCollision(True);
+	Collision->SetOverlap(True);
 	Collision->SetOwner(this);
 	SetUpAttachment(Collision);
 
@@ -33,6 +35,7 @@ void APlayer::Tick()
 {
 	int KeyCode = GEngine->GetKeyCode();
 	FVector2D PreLocation(Location);
+
 
 	if (KeyCode == 'w')
 	{

@@ -6,9 +6,12 @@
 
 AWall::AWall()
 {
+
+	bool True = true;
+	bool False = false;
 	Collision = new UCollisionComponent;
-	Collision->SetCollision(true);
-	Collision->SetOverlap(true);
+	Collision->SetCollision(True);
+	Collision->SetOverlap(False);
 	Collision->SetOwner(this);
 	SetUpAttachment(Collision);
 

@@ -15,15 +15,15 @@ public:
 	bool CheckCollision(const UCollisionComponent* InComp);
 
 	__forceinline bool GetCollision() const { return bIsCollision; }
-	bool SetCollision(bool InCollisionValue) 
+	bool SetCollision(bool &InCollisionValue) 
 	{
-		return InCollisionValue;
+		return bIsCollision = InCollisionValue;
 	}
 
 	__forceinline bool GetOverlap() const { return bIsOverlap; }
-	bool SetOverlap(bool InOverlapValue)
+	bool SetOverlap(bool &InOverlapValue)
 	{
-		return InOverlapValue;
+		return bIsOverlap = InOverlapValue;
 	}
 
 protected:
